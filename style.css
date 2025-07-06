@@ -42,6 +42,13 @@ nav .links a:hover {
   color: #3b82f6;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+
 .section {
   padding: 100px 20px 80px;
   min-height: 100vh;
@@ -408,4 +415,36 @@ footer {
   padding: 20px;
   background: #111827;
   color: #9ca3af;
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 1rem;
+}
+
+.language-switcher i {
+  color: #3b82f6; /* globe icon in your main blue */
+  font-size: 1.1rem;
+}
+
+.language-switcher select {
+  background-color: #1e293b; /* dark background to match nav */
+  color: #fff; /* white text */
+  border: 1px solid #3b82f6;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.language-switcher select:hover,
+.language-switcher select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
 }
