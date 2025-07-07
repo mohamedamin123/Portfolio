@@ -12,7 +12,13 @@
 <nav>
   <div class="logo">Mohamed Amin Gana</div>
 
-  <div class="links">
+  <!-- Hamburger for mobile -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Navigation Links -->
+  <div class="links" id="nav-links">
     <a href="#accueil">Home</a>
     <a href="#apropos">About</a>
     <a href="#competences">Skills</a>
@@ -22,6 +28,7 @@
     <a href="#contact">Contact</a>
   </div>
 
+  <!-- Language Switcher -->
   <div class="language-switcher">
     <i class="fa-solid fa-globe"></i>
     <select onchange="location = this.value;">
@@ -30,6 +37,7 @@
     </select>
   </div>
 </nav>
+
 
 <section id="accueil" class="section hero">
   <div class="container" data-aos="fade-up">
