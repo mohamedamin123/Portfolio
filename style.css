@@ -48,46 +48,63 @@ nav .links a:hover {
   gap: 1.5rem;
 }
 
-.hamburger {
+.menu-toggle {
   display: none;
+  background: none;
+  border: none;
   font-size: 1.5rem;
   color: white;
   cursor: pointer;
 }
+/* ✅ Corrige le scroll horizontal indésirable */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
+/* ✅ Empêche les éléments de dépasser */
+* {
+  box-sizing: border-box;
+}
+
+/* ✅ Responsive navbar : empiler les éléments si l'écran est petit */
 @media (max-width: 768px) {
   nav {
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* éviter l'empilement */
+    justify-content: space-between; /* garder espace entre logo, liens, switcher */
+    padding: 1em 1em;
+    align-items: center;
   }
 
-  .hamburger {
-    display: block;
+  nav .links {
+    display: flex !important; /* toujours visible */
+    flex-direction: row; /* horizontal */
+    gap: 10px;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* scroll horizontal si trop long */
   }
 
-  .links {
-    width: 100%;
-    display: none;
-    flex-direction: column;
-    background-color: #111827;
-    padding: 1rem 0;
-  }
-
-  .links.show {
-    display: flex;
-  }
-
-  .links a {
-    margin: 10px 0;
-    text-align: center;
+  nav .links a {
+    margin-left: 0;
+    padding: 0 8px;
+    white-space: nowrap;
   }
 
   .language-switcher {
-    margin-left: 0;
-    margin-top: 10px;
-    width: 100%;
-    justify-content: center;
+    margin-left: 1rem;
+    margin-top: 0;
+  }
+
+  .menu-toggle {
+    display: none; /* cacher le burger car menu toujours visible */
   }
 }
+
+/* ✅ Par défaut, cache le bouton menu burger sur grand écran */
+.nav-toggle {
+  display: none;
+}
+
 
 
 .section {
@@ -102,6 +119,7 @@ nav .links a:hover {
 .bg-dark {
   background: #1e293b;
 }
+
 
 .container {
   max-width: 1000px;

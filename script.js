@@ -6,6 +6,5 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   this.reset();
 });
   function toggleMenu() {
-    const links = document.getElementById("nav-links");
-    links.classList.toggle("show");
+    document.getElementById("navbarLinks").classList.toggle("active");
   }
